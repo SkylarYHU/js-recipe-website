@@ -7,6 +7,7 @@ function displayRecipes(recipes) {
   recipes.forEach((recipe) => {
     // 对于 recipes 数组中的每个配方，它会创建一个 li 元素并填充它
     const recipeItemEl = document.createElement("li");
+    // 将 recipe-item 这个 CSS 类添加到 recipeItemEl 这个元素上
     recipeItemEl.classList.add("recipe-item");
 
     const recipeImageEl = document.createElement("img");
@@ -17,6 +18,7 @@ function displayRecipes(recipes) {
     recipeTitleEl.innerText = recipe.title;
 
     const recipeIngredientsEl = document.createElement("p");
+    // 遍历 extendedIngredients 数组，并提取每个材料对象中的 original 属性，生成一个包含所有材料名称的数组
     recipeIngredientsEl.innerHTML = `
         <strong>Ingredients:</strong> ${recipe.extendedIngredients
           .map((ingredient) => ingredient.original)
