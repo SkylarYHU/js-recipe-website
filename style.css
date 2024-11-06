@@ -1,0 +1,109 @@
+*{
+  margin: 0;
+  padding: 0;
+  /* 元素的宽度和高度包括了内边距和边框，避免计算宽度时出现意外的布局问题 */
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #ebdede;
+  color: #333;
+}
+
+header {
+  background-color: #0D0106;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+.container {
+  margin: 10px auto;
+  max-width: 1200px;
+}
+
+.recipe-list {
+  list-style: none;
+  display: grid;
+  gap: 20px;
+  /* 使列数自动适应屏幕宽度 */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.recipe-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: #fffaf0;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+.recipe-item:hover {
+  transform: scale(1.02);
+}
+
+.recipe-item img {
+  width: 100%;
+  height: 200px;
+  /* 保证图片内容充满容器，保持图片的比例，裁剪超出部分 */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.recipe-item h2 {
+  font-size: 20px;
+  margin: 0;
+  color: #302f2e;
+  text-align: center;
+}
+
+.recipe-item p {
+  font-size: 16px;
+  color: #555;
+  margin: 20px 0;
+  text-align: center;
+  /* 使用 Webkit 的多行文本截断属性 */
+  display: -webkit-box;
+  /* 限制显示最多3行文本 */
+  -webkit-line-clamp: 3;
+  /* 设置文本方向为垂直 */
+  -webkit-box-orient: vertical;
+  /* 隐藏超出容器的文本部分 */
+  overflow: hidden;
+  /* 超出部分显示省略号 */
+  text-overflow: ellipsis;
+}
+
+.recipe-item a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #FF331F;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.recipe-item a:hover {
+  background-color: #292627;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+}
